@@ -34,6 +34,17 @@ static char *colors[][3] = {
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
+static const char *const autostart[] = {
+	"numlockx", NULL,
+	"unclutter", NULL,
+	"dropbox", NULL,
+	"keepassxc", NULL,
+	"copyq", NULL,
+	"dunst", NULL,
+	"dwmblocks", NULL,
+	NULL /* terminate */
+};
+
 typedef struct {
 	const char *name;
 	const void *cmd;
