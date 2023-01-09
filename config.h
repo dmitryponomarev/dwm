@@ -40,6 +40,7 @@ static const char *const autostart[] = {
 	"dropbox", NULL,
 	"keepassxc", NULL,
 	"copyq", NULL,
+	"flameshot", NULL,
 	"dunst", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
