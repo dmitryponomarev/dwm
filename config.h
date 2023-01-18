@@ -42,6 +42,7 @@ static const char *const autostart[] = {
 	"copyq", NULL,
 	"flameshot", NULL,
 	"dunst", NULL,
+	"anki", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
