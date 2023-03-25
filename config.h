@@ -42,7 +42,6 @@ static const char *const autostart[] = {
 	"copyq", NULL,
 	"flameshot", NULL,
 	"dunst", NULL,
-	"anki", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
@@ -82,6 +81,7 @@ static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
+#include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",	tile },			/* Default: Master on left, slaves on right */
@@ -95,8 +95,8 @@ static const Layout layouts[] = {
 
 	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
 	{ ">M>",	centeredfloatingmaster },	/* Same but master floats */
-
 	{ "><>",	NULL },			/* no layout function means floating behavior */
+	{ "HHH",	grid },
 	{ NULL,		NULL },
 };
 
@@ -215,7 +215,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
-	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
+	{ MODKEY,			XK_g,		setlayout,	{.v = &layouts[9]} },
+	/* { MODKEY,			XK_g,		shiftview,	{ .i = -1 } }, */
 	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
 	/* J and K are automatically bound above in STACKEYS */
